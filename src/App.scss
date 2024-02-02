@@ -1,0 +1,27 @@
+.App {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  min-height: 100vh;
+  background-color: rgb(245, 0, 0);
+}
+
+.input_search {
+  width: 200px;
+  height: 20px;
+  color: rgb(184, 110, 110);
+}
+
+.input_search:hover {
+  transition: 1s;
+  transform: scaleX(1.2);
+}
