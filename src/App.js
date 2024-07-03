@@ -1,20 +1,20 @@
-import Movies from './components/Movies';
-import { useState, useEffect } from 'react';
-import { APIKEY } from './env.js';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchData } from './actions';
-import CircularProgress from '@mui/material/CircularProgress'
+import Movies from "./components/Movies";
+import { useState, useEffect } from "react";
+import { APIKEY } from "./env.js";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchData } from "./actions";
+import CircularProgress from "@mui/material/CircularProgress";
 
-import './App.scss';
+import "./App.scss";
 
 function App() {
-  // const [movies, setMovies] = useState ([  ]); 
-  const [searchField, setSearchField] = useState('');
-  const URL = `https://www.omdbapi.com/?s=${searchField}&apikey=${APIKEY}`
-  const movies = useSelector(state => state.movies);
+  // const [movies, setMovies] = useState ([  ]);
+  const [searchField, setSearchField] = useState("");
+  const URL = `https://www.omdbapi.com/?s=${searchField}&apikey=${APIKEY}`;
+  const movies = useSelector((state) => state.movies);
   const dispatch = useDispatch();
 
-  function getMovies(){
+  function getMovies() {
     // fetchMovies()
     // fetch(encodeURI(URL))
     // .then (res => res.json())
@@ -26,25 +26,27 @@ function App() {
   useEffect(getMovies, [searchField]);
 
   let timer;
-  function handleChange(event){
-  clearTimeout(timer);
+  function handleChange(event) {
+    clearTimeout(timer);
 
     setTimeout(() => {
-    setSearchField(event.target.value)
-  }, 3000)
+      setSearchField(event.target.value);
+    }, 3000);
   }
 
   return (
     <div className="App">
+      <h1 className="title">SEARCH FILMS</h1>
       <input className="input_search" type="text" onChange={handleChange} />
-      {
-        movies.pending ? "Loading..." :
-          movies.error ? movies.error :
-            <Movies movies={movies.movies} />
-      }
+      {movies.pending ? (
+        "Loading..."
+      ) : movies.error ? (
+        movies.error
+      ) : (
+        <Movies movies={movies.movies} />
+      )}
     </div>
   );
 }
-
 
 export default App;

@@ -1,7 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .App {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
 }
 
 .App {
@@ -12,16 +22,37 @@
   gap: 40px;
   padding: 20px;
   min-height: 100vh;
-  background-color: rgb(245, 0, 0);
+  background-image: url("./bg.svg");
+  background-size: cover;
+
+  background-repeat: no-repeat;
 }
 
 .input_search {
-  width: 200px;
-  height: 20px;
-  color: rgb(184, 110, 110);
+  background: rgba(217, 217, 217, 0.3);
+  width: 800px;
+  height: 65px;
+  border: 1.5px solid rgba(235, 235, 235, 1);
+  border-radius: 20px;
+  outline: none;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 35.51px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  margin-top: 4%;
+  margin-bottom: 5%;
 }
 
-.input_search:hover {
-  transition: 1s;
-  transform: scaleX(1.2);
+.title {
+  margin-top: 7%;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 35.51px;
+  letter-spacing: 0.04em;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
 }
